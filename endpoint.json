@@ -1,0 +1,97 @@
+{
+    "collections": [
+        {
+            "collectionName": "AkutteHospitalskontakter",
+            "properties": [
+                {
+                    "name": "Observation",
+                    "properties": [
+                        {
+                            "name": "PainEvaluation",
+                            "properties": [
+                                {
+                                    "name": "ResultCode",
+                                    "properties": [
+                                        {
+                                            "name": "Value_String",
+                                            "type": "string",
+                                            "enum": [
+                                                "vas",
+                                                "nrs",
+                                                "vrs",
+                                                "andet"
+                                            ]
+                                        }
+                                    ],
+                                    "description": "Hvis der angives 'Andet' i type, er det muligt at indsende yderligere information i 'Note' element.",
+                                    "required": true
+                                },
+                                {
+                                    "name": "ResultValue",
+                                    "properties": [
+                                        {
+                                            "name": "Value_Numeric",
+                                            "type": "numeric",
+                                            "minValue": 0
+                                        }
+                                    ],
+                                    "description": "Værdi for \"smertescore",
+                                    "required": true
+                                },
+                                {
+                                    "name": "DateTime",
+                                    "properties": [
+                                        {
+                                            "name": "Value_DateTime",
+                                            "type": "DateTime"
+                                        }
+                                    ],
+                                    "required": true
+                                },
+                                {
+                                    "name": "Note",
+                                    "properties": [
+                                        {
+                                            "name": "Value_String",
+                                            "type": "string"
+                                        }
+                                    ],
+                                    "description": "Bruges ved \"andet\" type af smertescore"
+                                }
+                            ],
+                            "description": "Første smertemåling."
+                        },
+                        {
+                            "name": "OxygenSaturation",
+                            "properties": [
+                                {
+                                    "name": "ResultValue",
+                                    "properties": [
+                                        {
+                                            "name": "Value_Numeric",
+                                            "type": "numeric",
+                                            "minValue": 0,
+                                            "maxValue": 100
+                                        }
+                                    ],
+                                    "description": "Enhed = %"
+                                },
+                                {
+                                    "name": "DateTime",
+                                    "properties": [
+                                        {
+                                            "name": "Value_DateTime",
+                                            "type": "DateTime"
+                                        }
+                                    ],
+                                    "required": true
+                                }
+                            ],
+                            "description": "Første iltmætningsmåling."
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
